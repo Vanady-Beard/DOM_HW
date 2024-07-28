@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Create Your Form</h1>
+<form id = "FormInformation" action="">
+<label for = "name">Name:</label><br>
+<input type="text" id="name" name="name" ><br>
+<label for = "email">Email:</label> <br>
+<input type = "text" id = "email" name = "email" ><br>
+<label for = "message"> Message: </label><br>
+<textarea id ="message" name ="message" rows ="7" cols="30"  placeholder ="Please type your message here...">
+</textarea> <br>
+
+<button type="button" onclick="formSubmit()">Submit</button>
+</form>
+
+
+<script>
+
+function formSubmit (){
+let formInfo = {};
+    formInfo.name = document.getElementById("name").value;
+    formInfo.email = document. getElementById("email").value;
+    formInfo.message = document.getElementById("message").value;
+
+    if(!formInfo.name || !formInfo.email || !formInfo.message){
+        alert("Please fill all fields.")
+        return;
+    }
+
+console.log (formInfo);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

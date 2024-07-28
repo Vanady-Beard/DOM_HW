@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<div id="allproducts"></div>
+<button id = "Btn"> Display Products </button>
+<button id = "RBtn"> Remove Products </button>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+    let products = [
+    { name: "Laptop", price: 999.99, description: "Powerful computing on the go" },
+    { name: "Smartphone", price: 699.99, description: "Stay connected wherever you are" },
+    { name: "Headphones", price: 149.99, description: "Immersive audio experience" }
+];
+
+function productReset (products){
+    reset = '';
+    
+    return reset;
+}
+
+
+function productList (products){
+  
+    let productH = '';
+    products.forEach (product =>{
+        productH += `
+         <div>
+            <h2>${product.name}</h2>
+            <p>Price: $${product.price}</p>
+            <p>Description: ${product.description}</p>
+             </div>
+            <hr>
+            `;
+        
+});
+    return productH;
+}
+
+
+window.addEventListener("load",() => {
+
+document.getElementById("allproducts").innerHTML= productList(products);
+
+});
+
+document.getElementById("Btn").addEventListener("click",() => {
+
+    document.getElementById("allproducts").innerHTML= productList(products);
+
+});
+
+document.getElementById("RBtn").addEventListener("click", ()=> {
+    document.getElementById("allproducts").innerHTML = productReset();
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .box{
+        display: inline-block;
+        line-height: 100px; 
+        width: 200px;
+        height: 200px;
+        margin:10px; 
+        cursor:pointer;
+        border: pink 4px solid;
+        position:relative;
+    }
+
+</style>
+
+<body>
+    
+    <div id="box1" class="box">Change Background Color</div>
+    <div id="box2" class="box">Hover Change Border Color</div>
+    <div id="box3" class="box">Change Text</div>
+    <div id="box4" class="box">Move Text & Size</div>   
+    <div id="box5" class="box">Move Down</div>
+
+<script>
+
+function changeColor (element) {
+    element.style.backgroundColor = '#CBC3E3' ;
+}
+
+function changeText(element) {
+    element.style.color = '#CC0000' ;
+    element.style.fontSize = '25px';
+}
+function changePosition (element){
+    element.style.position ="absolute";
+    element.style.top = "50px";
+}
+
+function textAlign(element) {
+    element.style.textAlign = "center";
+    element.style.backgroundColor = '#CBC3E3';
+    element.style.fontSize = '20px';
+    element.style.padding = "10px";
+
+}
+
+
+
+document.querySelectorAll('#box1').forEach(box =>{
+     box1.addEventListener("click", function(){
+    changeColor(this);
+
+     });
+
+     box2.addEventListener("click", function(){
+
+        this.style.borderColor = "blue";
+     });
+     box3.addEventListener("click", function(){
+
+       changeText(this);
+});
+    box4.addEventListener("click", function(){
+        textAlign(this);
+    })
+    box5.addEventListener("click",  function(){
+        changePosition(this);
+    });
+
+
+});
+
+
+
+
+</script>
+</body>
+</html>
